@@ -27,7 +27,12 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: 3.12
+          python-version: 3.11  # Use Python 3.11 instead of 3.12
+
+      - name: Install System Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libssl-dev libffi-dev build-essential
 
       - name: Install Dependencies
         run: |
@@ -38,6 +43,7 @@ jobs:
         shell: bash
         run: |
           python -m pytest
+
 
   # deploy:
   #   name: Deploy to DigitalOcean
