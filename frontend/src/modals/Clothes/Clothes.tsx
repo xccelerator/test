@@ -7,8 +7,8 @@ const Clothes = ({selectedCategory}) => {
 
     const getData = async () => {
         const response = await fetch(selectedCategory
-            ? `http://server/api/clothes?offset=${page}&limit=3&priority=high&category_id=${selectedCategory}`
-            : `http://server/api/clothes?offset=${page}&limit=3&priority=high`
+            ? `http://46.101.103.152/api/clothes?offset=${page}&limit=3&priority=high&category_id=${selectedCategory}`
+            : `http://46.101.103.152/api/clothes?offset=${page}&limit=3&priority=high`
         );
         const json = await response.json();
 

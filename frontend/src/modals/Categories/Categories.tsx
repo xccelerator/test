@@ -5,7 +5,7 @@ const Categories = ({handleSelect}) => {
     const [data, setData] = useState([]);
 
     const getData = async () => {
-        const response = await fetch('http://server/api/categories');
+        const response = await fetch('http://46.101.103.152/api/categories');
         const json = await response.json();
 
         setData(json)
