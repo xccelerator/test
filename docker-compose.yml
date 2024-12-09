@@ -48,7 +48,6 @@ services:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf
     depends_on:
       - server
-      - frontend
       - redis
     networks:
       - app-network
