@@ -1,9 +1,11 @@
 import uuid
-import os
 
 class Config:
-    CASSANDRA_HOSTS = os.getenv('CASSANDRA_HOSTS', 'localhost').split(',')
-    CASSANDRA_PORT = int(os.getenv('CASSANDRA_PORT', 9042))
-    NODE_ID = os.getenv('NODE_ID', str(uuid.uuid4()))
-    CACHE_TYPE = os.getenv('CACHE_TYPE', 'RedisCache')
-    CACHE_REDIS_URL = os.getenv('CACHE_REDIS_URL', 'redis://localhost:6379/0')
+    CASSANDRA_HOSTS = ['cassandra1', 'cassandra2', 'cassandra3']
+    CASSANDRA_PORT = 9042
+    CASSANDRA_KEYSPACE = 'clothes_app'
+    NODE_ID = str(uuid.uuid4())
+    CACHE_TYPE = 'RedisCache'
+    CACHE_REDIS_HOST = 'redis'
+    CACHE_REDIS_PORT = 6379
+    CACHE_DEFAULT_TIMEOUT = 300

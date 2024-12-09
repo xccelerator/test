@@ -19,8 +19,8 @@ def create_app():
 
     # Initialize cache with app
     cache.init_app(app, config={
-        'CACHE_TYPE': Config.CACHE_TYPE,
-        'CACHE_REDIS_URL': Config.CACHE_REDIS_URL
+        'CACHE_TYPE': 'RedisCache',
+        'CACHE_REDIS_URL': 'redis://redis:6379/0'
     })
 
     # Cassandra connection setup
